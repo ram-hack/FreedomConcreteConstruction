@@ -1,11 +1,131 @@
 $black: rgb(0, 0, 0);
 $white: rgb(255,255,255);
+$concrete: rgb(161, 152, 127);
+
 *{
   list-style: none;
   text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+}
+
+html, body{
+  margin: 0;
 }
 
 body{
-  background: $black;
+  background: $white;
   color: $white;
+  font-size: 16px;
+}
+
+
+.navbar{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 120px;
+  background: $concrete;
+  margin:0;
+  width:100vw;
+  box-shadow: 0px 2px 5px black;
+
+  #title{
+    font-size: 2.5rem;
+    font-weight: bold;
+    margin-left: 50px;
+  }
+
+  ul {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: row;
+    align-items: center;
+    align-self: flex-end;
+    margin-right: 50px;
+
+    width: 30%;
+
+    .navButton{
+      position: relative;
+      font-size: 1.5rem;
+      padding: 6px;
+
+      &:hover{
+        &:after{
+          width: 100%;
+
+        }
+      }
+
+      &:after{
+        content: '';
+        position: absolute;
+        bottom: 0px;
+        left: 0px;
+        height: 2px;
+        background-color: $white;
+        width: 0;
+        transition: width .4s;
+      }
+
+      a{
+        color: $white;
+
+
+      }
+    }
+  }
+}
+
+#header-container{
+  margin-top: 20px;
+  position: relative;
+  display: flex;
+  height: 475px;
+  #header-content{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    background: url(../assets/images/cementBackground.jpg);
+
+    font-size: 4rem;
+    color: $white;
+    text-shadow: 2px 2px 3px black;
+  }
+  #trowel-container{
+    display: flex;
+    align-items: center;
+
+    width: 140vw;
+    position: absolute;
+    left: -400px;
+    top: -15px;
+    // left:-22vw;
+    overflow: hidden;
+    transition: left 1.5s linear;
+    &:hover{
+      left: 120vw;
+    }
+
+    #trowel{
+      transform: rotate(75deg) scale(-1);
+      z-index: 3;
+    }
+
+    #trowel-whitespace{
+      position: absolute;
+      width: 100%;
+      height: 95%;
+      top: 15px;
+      left: 240px;
+      background: $white;
+      z-index: 2;
+    }
+
+  }
 }
