@@ -12,4 +12,6 @@ when done working on code for the session, push the non-master branch you worked
 -- git push origin name-of-branch
 
 Go to the github repo for the project and click compare and pull request on the right. Then click green pull request button.
-Make sure the next page says no conflicts with master branch, then merge pull request and confirm merge. 
+Make sure the next page says no conflicts with master branch, then merge pull request and confirm merge.
+
+Finally delete your local branch -- git branch -d branch-name
