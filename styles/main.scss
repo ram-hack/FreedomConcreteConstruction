@@ -1,7 +1,8 @@
+
 $black: rgb(0, 0, 0);
 $white: rgb(255,255,255);
 $concrete: rgb(161, 152, 127);
-
+@import 'footer';
 *{
   list-style: none;
   text-decoration: none;
@@ -16,6 +17,9 @@ body{
   background: $white;
   color: $white;
   font-size: 16px;
+  height: 300vh;
+  width: 100vw;
+  position: relative;
 }
 
 
@@ -23,7 +27,9 @@ body{
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  position: fixed;
+  top: 0;
+  z-index: 100;
   height: 120px;
   background: $black;
   margin:0;
@@ -48,7 +54,7 @@ body{
     align-self: flex-end;
     margin-right: 50px;
 
-    width: 30%;
+    width: 500px;
 
     .navButton{
       position: relative;
@@ -89,8 +95,11 @@ body{
 #header-container{
   margin-top: 20px;
   position: relative;
+  top: 120px;
   display: flex;
   height: 475px;
+  overflow: hidden;
+  width: 100%;
   #header-content{
     display: flex;
     align-items: center;
@@ -116,9 +125,7 @@ body{
     // left:-22vw;
     overflow: hidden;
     transition: left 1.5s linear;
-    &:hover{
-      left: 120vw;
-    }
+
 
     #trowel{
       transform: rotate(75deg) scale(-1);
