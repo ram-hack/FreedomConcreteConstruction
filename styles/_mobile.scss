@@ -1,0 +1,30 @@
+@media(max-width: 950px){
+  .navbar{
+    flex-direction: column;
+    justify-content: space-around;
+
+
+    #title {
+      height: 50%;
+      margin-left: 0px !important;
+      margin-top: 10px;
+      #nav-logo{
+        height: 100% !important;
+      }
+    }
+    ul{
+      align-self: auto;
+      margin: 0px;
+    }
+
+  }
+}
+
+
+@media(max-width: 800px){
+    .navbar {
+      ul{
+      
+      }
+    }
+}

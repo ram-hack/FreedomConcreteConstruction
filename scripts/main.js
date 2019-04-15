@@ -4,5 +4,18 @@ $(document).ready(function() {
     if($("#header-container").offset().top -100 <= $(document).scrollTop()){
       $("#trowel-container").css("left","120vw");
     }
-  })
+  });
+
+  function mediaChanges(mediaQuery) {
+    if (mediaQuery.matches){
+
+    }else{
+      console.log("not in query");
+    }
+  }
+  var mediaQuery = window.matchMedia("(max-width:800px)");
+  mediaChanges(mediaQuery);
+  mediaQuery.addListener(mediaChanges);
+
+
 });
