@@ -8,9 +8,13 @@ $(document).ready(function() {
 
   function mediaChanges(mediaQuery) {
     if (mediaQuery.matches){
-
+      $("#button-container").addClass("hamMenu closed");
+      $(".hamburger").click(function () {
+        $(".hamMenu").toggle("closed");
+        $(".hamburger").css("transform", "translate(-140px, )");
+    });
     }else{
-      console.log("not in query");
+      $("#button-container").removeClass("hamMenu closed");
     }
   }
   var mediaQuery = window.matchMedia("(max-width:800px)");
