@@ -3,6 +3,7 @@ $black: rgb(0, 0, 0);
 $white: rgb(255,255,255);
 $concrete: rgb(161, 152, 127);
 @import 'footer';
+
 *{
   list-style: none;
   text-decoration: none;
@@ -144,3 +145,6 @@ body{
 
   }
 }
+
+
+@import 'mobile';
