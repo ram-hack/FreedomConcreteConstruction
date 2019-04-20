@@ -9,12 +9,15 @@ $(document).ready(function() {
   function mediaChanges(mediaQuery) {
     if (mediaQuery.matches){
       $("#button-container").addClass("hamMenu closed");
-      $(".hamburger").click(function () {
+      $("#hamburger").click(function () {
         $(".hamMenu").toggle("closed");
-        $(".hamburger").css("transform", "translate(-140px, )");
+        $("#hamburger").css("transform", "translate(-140px,0px )");
     });
     }else{
       $("#button-container").removeClass("hamMenu closed");
+
+      $("#hamburger").css("transform", "translate(0px,0px )");
+
     }
   }
   var mediaQuery = window.matchMedia("(max-width:800px)");
