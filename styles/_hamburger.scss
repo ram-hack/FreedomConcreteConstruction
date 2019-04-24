@@ -21,6 +21,7 @@ $fall-height: 40px;
     top: 50%;
     right: 50px;
     transform: translate(0px, -50%);
+    z-index: 100;
 }
 #hamburger .row {
     height: $bun-height;
@@ -70,39 +71,44 @@ $fall-height: 40px;
     display: block;
     padding-top: 100%;
 }
+//
+//Forward to X
+//
 
-#hamburger:hover .row:nth-child(2) .bun-half:first-child {
+
+
+.forward .row:nth-child(2) .bun-half:first-child {
     animation: fall-left $durationSecondRow;
     animation-delay: $delaySecondRow;
     animation-fill-mode: forwards;
 }
-#hamburger:hover .row:nth-child(2) .bun-half:last-child {
+.forward .row:nth-child(2) .bun-half:last-child {
     animation: fall-right $durationSecondRow;
     animation-delay: $delaySecondRow;
     animation-fill-mode: forwards;
 }
 
-#hamburger:hover .row:nth-child(3) .bun-half:first-child {
+.forward .row:nth-child(3) .bun-half:first-child {
     animation: fall-left $durationThirdRow;
     animation-delay: $delayThirdRow;
     animation-fill-mode: forwards;
 }
-#hamburger:hover .row:nth-child(3) .bun-half:last-child {
+.forward .row:nth-child(3) .bun-half:last-child {
     animation: fall-right $durationThirdRow;
     animation-delay: $delayThirdRow;
     animation-fill-mode: forwards;
 }
 
-#hamburger:hover .breaker {
+.forward .breaker {
     animation: breaker-fall $duration;
     animation-fill-mode: forwards;
 }
 
-#hamburger:hover .row.first .bun-half:first-child {
+.forward .row.first .bun-half:first-child {
     animation: transform-left $duration;
     animation-fill-mode: forwards;
 }
-#hamburger:hover .row.first .bun-half:last-child {
+.forward .row.first .bun-half:last-child {
     animation: transform-right $duration;
     animation-fill-mode: forwards;
 }
@@ -175,4 +181,64 @@ $fall-height: 40px;
         opacity: 0;
         transform: translateY($fall-height) rotate(-75deg);
     }
+}
+//
+//BackWards to Hamburger
+//
+#hamburger .row:nth-child(2) .bun-half:first-child {
+    animation: rise-left $durationSecondRow;
+    animation-delay: $delaySecondRow;
+    animation-fill-mode: forwards;
+}
+#hamburger .row:nth-child(2) .bun-half:last-child {
+    animation: rise-right $durationSecondRow;
+    animation-delay: $delaySecondRow;
+    animation-fill-mode: forwards;
+}
+
+#hamburger .row:nth-child(3) .bun-half:first-child {
+    animation: rise-left $durationThirdRow;
+    animation-delay: $delayThirdRow;
+    animation-fill-mode: forwards;
+}
+#hamburger .row:nth-child(3) .bun-half:last-child {
+    animation: rise-right $durationThirdRow;
+    animation-delay: $delayThirdRow;
+    animation-fill-mode: forwards;
+}
+
+
+#hamburger .row.first .bun-half:first-child {
+    animation: reverse-left $duration;
+    animation-fill-mode: forwards;
+}
+#hamburger .row.first .bun-half:last-child {
+    animation: reverse-right $duration;
+    animation-fill-mode: forwards;
+}
+
+@keyframes reverse-left{
+  0%{
+    transform: translateY($hamburger-height / 2) rotate(45deg);
+  }
+
+  100%{
+      transform: translateY(0) rotate(0deg);
+      width: $hamburger-width;
+      border-radius: 5px;
+
+  }
+}
+
+@keyframes reverse-right{
+  0%{
+    transform: translateY($hamburger-height / 2) rotate(-45deg);
+
+  }
+
+  100%{
+    transform: translate(-20px, 12px) rotate(0deg);
+    width: $hamburger-width;
+    border-radius: 5px;
+  }
 }
