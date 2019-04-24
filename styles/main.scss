@@ -3,6 +3,7 @@ $black: rgb(0, 0, 0);
 $white: rgb(255,255,255);
 $concrete: rgb(161, 152, 127);
 $accent: rgb(222, 130, 44);
+$accent-light: lighten($accent, 6%);
 
 $nav-height: 120px;
 
@@ -127,10 +128,10 @@ header {
       margin-left: 50%;
       display: flex;
       flex-direction: column;
-      align-items: flex-end;
-      text-align: justify;
+      align-items: flex-start;
 
       h2 {
+        -webkit-box-decoration-break: clone;
         box-decoration-break: clone;
         padding: 1rem;
         color: white;
@@ -146,11 +147,26 @@ header {
         background-color: $accent;
         color: black;
         font-family: 'Permanent Marker', sans-serif;
-        padding: 1rem;
+        padding: 0 1rem;
+        margin-top: 2px;
         font-size: 3rem;
+        line-height: 2;
         border: none;
         display: block;
-        clip-path: polygon(0 0, 100% 0, 100% 70%, 85% 100%, 0 100%, 0 0);
+        clip-path: polygon(0 0, 100% 0, 100% 70%, 88% 100%, 0 100%, 0 0);
+        cursor: pointer;
+        transition: all 200ms;
+        
+        &:hover {
+          background-color: $accent-light;
+          padding-left: 3rem;
+          padding-right: 2rem;
+        }
+
+        &:active, &:focus {
+          border: none;
+          outline: none;
+        }
       }
     }
 }
@@ -160,9 +176,7 @@ header {
 // ----------------------------------------
 
 #header-container{
-  margin-top: 20px;
   position: relative;
-  top: 120px;
   display: flex;
   height: 475px;
   overflow: hidden;
