@@ -187,41 +187,49 @@ $fall-height: 40px;
 //
 //BackWards to Hamburger
 //
-#hamburger .row:nth-child(2) .bun-half:first-child {
-    animation: rise-left $durationSecondRow;
+.backward .row:nth-child(2) .bun-half:first-child {
+    opacity:0;
+    animation: opacity-delay $durationSecondRow;
     animation-delay: $delaySecondRow;
     animation-fill-mode: forwards;
 }
-#hamburger .row:nth-child(2) .bun-half:last-child {
-    animation: rise-right $durationSecondRow;
+.backward .row:nth-child(2) .bun-half:last-child {
+    opacity:0;
+    animation: opacity-delay $durationSecondRow;
     animation-delay: $delaySecondRow;
     animation-fill-mode: forwards;
 }
 
-#hamburger .row:nth-child(3) .bun-half:first-child {
+.backward .row:nth-child(3) .bun-half:first-child {
+    opacity:0;
     animation: rise-left $durationThirdRow;
     animation-delay: $delayThirdRow;
     animation-fill-mode: forwards;
 }
-#hamburger .row:nth-child(3) .bun-half:last-child {
+.backward .row:nth-child(3) .bun-half:last-child {
+    opacity:0;
     animation: rise-right $durationThirdRow;
     animation-delay: $delayThirdRow;
     animation-fill-mode: forwards;
 }
 
 
-#hamburger .row.first .bun-half:first-child {
+.backward .row.first .bun-half:first-child {
     animation: reverse-left $duration;
+    border-radius: 5px;
     animation-fill-mode: forwards;
 }
-#hamburger .row.first .bun-half:last-child {
+.backward .row.first .bun-half:last-child {
     animation: reverse-right $duration;
+    border-radius: 5px;
     animation-fill-mode: forwards;
 }
 
 @keyframes reverse-left{
   0%{
     transform: translateY($hamburger-height / 2) rotate(45deg);
+    width: $hamburger-width;
+
   }
 
   100%{
@@ -234,7 +242,8 @@ $fall-height: 40px;
 
 @keyframes reverse-right{
   0%{
-    transform: translateY($hamburger-height / 2) rotate(-45deg);
+    transform: translate(-20px ,$hamburger-height / 2) rotate(-45deg);
+    width: $hamburger-width;
 
   }
 
@@ -242,5 +251,45 @@ $fall-height: 40px;
     transform: translate(-20px, 12px) rotate(0deg);
     width: $hamburger-width;
     border-radius: 5px;
+  }
+}
+
+
+
+@keyframes opacity-delay{
+  0%{
+    opacity: 0;
+  }
+
+  99%{
+    opacity: 0
+  }
+
+  100%{
+    opacity: 1;
+  }
+}
+
+@keyframes rise-right{
+  0%{
+    transform: translateY($fall-height) ;
+    opacity: 0;
+  }
+
+  100%{
+    transform: translateY(0) ;
+    opacity: 1;
+  }
+}
+
+@keyframes rise-left{
+  0%{
+    transform: translateY($fall-height) ;
+    opacity: 0;
+  }
+
+  100%{
+    transform: translateY(0) ;
+    opacity: 1;
   }
 }
