@@ -7,17 +7,31 @@ $(document).ready(function() {
 
 
   });
+
+  var queryStart = true;
   $("#hamburger").click(function () {
     $("#button-container").toggleClass("closed");
     $("#hamburger").toggleClass("forward");
+    if (!queryStart){
+      $("#hamburger").toggleClass("backward");
+    }
+    queryStart = false;
+
+
+
 });
   function mediaChanges(mediaQuery) {
+    //small screen
     if (mediaQuery.matches){
       $("#button-container").addClass("hamMenu closed");
 
     }else{
+      //big screen
       $("#button-container").removeClass("hamMenu closed");
       $("#hamburger").removeClass("forward");
+      $("#hamburger").removeClass("backward");
+
+      queryStart = true;
 
     }
   }
