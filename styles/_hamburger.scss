@@ -4,6 +4,7 @@ $duration: .6s;
 $delaySecondRow: .1s;
 $durationSecondRow: .5s;
 $delayThirdRow: .2s;
+$reverseDelayThirdRow:.4s;
 $durationThirdRow: .4s;
 $hamburger-width: 40px;
 $hamburger-height: 32px;
@@ -203,13 +204,13 @@ $fall-height: 40px;
 .backward .row:nth-child(3) .bun-half:first-child {
     opacity:0;
     animation: rise-left $durationThirdRow;
-    animation-delay: $delayThirdRow;
+    animation-delay: $reverseDelayThirdRow;
     animation-fill-mode: forwards;
 }
 .backward .row:nth-child(3) .bun-half:last-child {
     opacity:0;
     animation: rise-right $durationThirdRow;
-    animation-delay: $delayThirdRow;
+    animation-delay: $reverseDelayThirdRow;
     animation-fill-mode: forwards;
 }
 
