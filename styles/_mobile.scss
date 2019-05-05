@@ -3,6 +3,7 @@
 $menuDuration: .6s;
 
 @media(max-width: 950px){
+
   .navbar{
     flex-direction: column;
     justify-content: space-around;
@@ -22,10 +23,14 @@ $menuDuration: .6s;
     }
 
   }
+  #header-container #trowel-container{
+    display: none;
+  }
 }
 
 
 @media(max-width: 800px){
+
     .navbar {
       #title {
         height: 90%;
@@ -34,7 +39,6 @@ $menuDuration: .6s;
         #nav-logo{
           height: 100% !important;
         }
-        // z-index: 100;
       }
 
       .hamMenu{
@@ -47,14 +51,12 @@ $menuDuration: .6s;
         position: fixed;
         right: 0px;
         top: 120px;
-        z-index: -1;
 
 
         .navButton{
           position: absolute;
           width: 100%;
           background-color: $accent;
-          z-index: -1;
 
           &.navForward{
             opacity: 0;
@@ -126,7 +128,7 @@ $menuDuration: .6s;
             animation-fill-mode: forwards;
 
           }
-          
+
         }
 
 
